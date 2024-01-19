@@ -130,7 +130,6 @@ export default function Contact() {
                     <thead className='fixed-header'>
                         <tr>
                             <th scope="col"> <label>CREW ID</label></th>
-                            // <th scope="col"> <label>EMP Code</label></th>
                             <th scope="col"> <label>CREW NAME</label></th>
                             <th scope="col"><label>MOBILE NO</label></th>
                             <th scope="col"><label>CREW TYPE</label></th>
@@ -143,7 +142,6 @@ export default function Contact() {
                                 return (
                                     <tr key={idx} className='PopIn'>
                                         <th scope="row">{Element["CREWID"]}</th>
-                                        // <td>{Element["EMP CODE"]}</td>
                                         <td>{Element["CREW NAME"]}
                                             {
                                                 IsLoggedIn ?
