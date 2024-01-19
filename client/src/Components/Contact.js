@@ -97,12 +97,15 @@ export default function Contact() {
     }, [])
 
     const DeleteContact = async (id) => {
-        axios.delete('https://ccc-bsp-server.vercel.app/DeleteContact/' + id)
-            .then(result => {
-                console.log(result)
-                window.location.reload();
-            })
-            .catch(error => console.log(error))
+        const AskUser = window.confirm("Are you sure?")
+        if (AskUser) {
+            axios.delete('http://localhost:3001/DeleteContact/' + id)
+                .then(result => {
+                    console.log(result)
+                    window.location.reload();
+                })
+                .catch(error => console.log(error))
+        }
     }
 
     const [SearchQuery, setSearchQuery] = useState('');
