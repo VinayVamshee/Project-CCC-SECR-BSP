@@ -130,7 +130,7 @@ export default function Contact() {
                     <thead className='fixed-header'>
                         <tr>
                             <th scope="col"> <label>CREW ID</label></th>
-                            <th scope="col"> <label>EMP Code</label></th>
+                            // <th scope="col"> <label>EMP Code</label></th>
                             <th scope="col"> <label>CREW NAME</label></th>
                             <th scope="col"><label>MOBILE NO</label></th>
                             <th scope="col"><label>CREW TYPE</label></th>
@@ -143,7 +143,7 @@ export default function Contact() {
                                 return (
                                     <tr key={idx} className='PopIn'>
                                         <th scope="row">{Element["CREWID"]}</th>
-                                        <td>{Element["EMP CODE"]}</td>
+                                        // <td>{Element["EMP CODE"]}</td>
                                         <td>{Element["CREW NAME"]}
                                             {
                                                 IsLoggedIn ?
@@ -157,8 +157,8 @@ export default function Contact() {
                                         </td>
                                         <td>
                                             <div className='Call'>
+                                            <a className='btn' href={`tel:${Element["MOBILE NO"]}`}><img src='https://cdn1.iconfinder.com/data/icons/free-98-icons/32/call-512.png' alt='...' /></a>
                                                 {Element["MOBILE NO"]}
-                                                <a className='btn' href={`tel:${Element["MOBILE NO"]}`}><img src='https://cdn1.iconfinder.com/data/icons/free-98-icons/32/call-512.png' alt='...' /></a>
                                             </div>
                                         </td>
                                         <td>{Element["CREW TYPE"]}</td>
