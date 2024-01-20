@@ -253,7 +253,7 @@ export default function Contact() {
                                     <div className="modal-body">
                                         <ul>
                                             {
-                                                Object.entries(SelectedContact).map(([Element, value]) => {
+                                                Object.entries(SelectedContact).slice(2).map(([Element, value]) => {
                                                     return (
                                                         <li key={Element}><label>{Element}</label>
                                                          <p>{typeof value === 'object' ? value.DATE ? new Date(value.DATE).toLocaleDateString() : "Invalid Date" : value}</p>
