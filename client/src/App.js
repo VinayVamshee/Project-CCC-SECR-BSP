@@ -11,20 +11,12 @@ import Videos from "./Components/Videos";
 import { jwtDecode } from 'jwt-decode';
 import Admin from "./Components/Admin";
 
-import { Analytics } from '@vercel/analytics/react';
-
 
 const ThemeStored = () => {
-  let Theme = localStorage.getItem('Theme');
-  if (Theme) {
-    return (
-      JSON.parse(localStorage.getItem('Theme'))
-    )
-  }
-  else {
-    return [];
-  }
-}
+  const storedTheme = localStorage.getItem('Theme');
+  return storedTheme ? JSON.parse(storedTheme) : 'light-theme';
+};
+
 
 function App() {
 
@@ -41,7 +33,7 @@ function App() {
   checkTokenExpiration();
 
   // eslint-disable-next-line
-  const [Theme, setTheme] = useState(ThemeStored);
+  const [Theme, setTheme] =  useState(() => ThemeStored());;
   useEffect(() => {
     localStorage.setItem('Theme', JSON.stringify(Theme))
   }, [Theme]);
@@ -59,7 +51,6 @@ function App() {
           <Route path='/Videos' element={<Videos/>}/>
           <Route path='/Admin' element={<Admin/>}/>
         </Routes>
-   <Analytics />
       </Router>
     </div>
   );
