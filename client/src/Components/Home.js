@@ -11,11 +11,11 @@ export default function Home() {
             <img src="https://i.ibb.co/Pt1h3nW/Whats-App-Image-2024-01-13-at-23-55-38.jpg" className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item" >
-            <h5 className="text-center">HEAD OFFICE</h5>
+            <h5 className="text-center">GM OFFICE</h5>
             <img src="https://i.ibb.co/FV0w5jG/Whats-App-Image-2024-01-13-at-23-56-29.jpg" className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item" >
-            <h5 className="text-center">LOBBY</h5>
+            <h5 className="text-center">BILASPUR LOBBY</h5>
             <img src="https://i.ibb.co/1Zs4s27/Whats-App-Image-2024-01-13-at-23-56-08.jpg" className="d-block w-100" alt="..." />
           </div>
         </div>
