@@ -90,12 +90,12 @@
   background-size: cover;
   background-repeat: no-repeat;
   animation: FadeIn 1s ease-in;
-  max-height: 840px;
+  max-height: 800px;
   overflow: auto;
 }
 .Home .carousel img {
   object-fit: cover;
-  height: 80vh;
+  height: 78vh;
 }
 .Home .carousel h5 {
   border-bottom: 1px solid black;
@@ -114,7 +114,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   animation: FadeIn 1s ease-in;
-  max-height: 840px;
+  max-height: 800px;
   overflow: auto;
 }
 .Search {
@@ -132,7 +132,7 @@
   width: 600px;
 }
 .Contact .Search-results {
-  max-height: 80vh;
+  max-height: 78vh;
   overflow: auto;
 }
 .Contact .Search-results .fixed-header {
@@ -222,7 +222,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   animation: FadeIn 1s ease-in;
-  max-height: 840px;
+  max-height: 800px;
   overflow: auto;
 }
 .Gallery .Gallery-card {
@@ -249,7 +249,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   animation: FadeIn 1s ease-in;
-  max-height: 840px;
+  max-height: 800px;
   overflow: auto;
 }
 .Books .card-body {
@@ -324,12 +324,12 @@
   background-size: cover;
   background-repeat: no-repeat;
   animation: FadeIn 1s ease-in;
-  max-height: 840px;
+  max-height: 800px;
   overflow: auto;
 }
 .Videos .card-body {
   margin-top: 10px;
-  max-height: 80vh;
+  max-height: 78vh;
   overflow: auto;
 }
 .Videos .Videos-Categories {
@@ -375,7 +375,7 @@
   background-repeat: no-repeat;
   border: 0.5px solid black;
   border-radius: 10px;
-  max-height: 840px;
+  max-height: 800px;
   overflow: auto;
 }
 .Notice .Heading {
@@ -411,11 +411,11 @@
   background-color: var(--BG-color);
   border: 0.5px solid black;
   border-radius: 10px;
-  max-height: 840px;
+  max-height: 800px;
   overflow: auto;
 }
 .Admin .AdminProfile .Image img {
-  height: 80vh;
+  height: 78vh;
 }
 .Admin .AdminProfile {
   display: flex;
