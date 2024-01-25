@@ -182,7 +182,7 @@ export default function Books() {
         {
           AllBooks && AllBooks.filter((book) => book.Name.toLowerCase().includes(SearchQuery.toLowerCase())).slice().reverse().map((Element, idx) => {
             const collapseId = `collapseSearchSpecific${idx}`;
-            const ClustercollapseId = `clustercollapseSearchSpecific${idx}`;
+            // const ClustercollapseId = `clustercollapseSearchSpecific${idx}`;
             const animationDelay = `${idx * 0.1}s`;
             return (
               <div className='AllBooks PopIn' style={{ animationDelay }} key={idx}>
@@ -191,6 +191,7 @@ export default function Books() {
                   <button className="btn" type="button" data-bs-toggle="collapse" data-bs-target={`#${collapseId}`} aria-expanded="false" aria-controls={collapseId}>
                     {Element.Name}
                   </button>
+                  <a href={Element.Link} target='_blank' rel="noreferrer">{Element.Name}</a>
 
                   {/* Cluster */}
                   {/* <button className="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target={`#${ClustercollapseId}`} aria-expanded="false" aria-controls={ClustercollapseId}>
@@ -211,12 +212,12 @@ export default function Books() {
                     <iframe title='CollapseFrame' src={Element.Link} width="100%" height="600px" />
                   </div>
                 </div>
-                <div className="collapse" id={ClustercollapseId}>
+                {/* <div className="collapse" id={ClustercollapseId}>
                   <div className="card card-body">
                     <p>{Element.ClusterName}</p>
                     <iframe title='CollapseFrame' src={Element.ClusterLink} width="100%" height="600px" />
                   </div>
-                </div>
+                </div> */}
 
               </div>
             )
