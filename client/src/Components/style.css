@@ -299,6 +299,9 @@
 .Books .Books-Categories .Category .collapse .card-body {
   padding: 0px;
 }
+.Books .Books-Categories .Category .collapse .card-body button {
+  text-align: left;
+}
 .Books .Books-Categories .Category .btn-category:hover {
   background-color: var(--Category-BG-hover-color);
   transform: scale(0.9);
