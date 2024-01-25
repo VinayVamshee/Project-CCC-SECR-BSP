@@ -277,7 +277,14 @@
   margin-right: 2px;
 }
 .Books .card-body .AllBooks .books-button a {
-  display: none;
+  text-align: left;
+  margin-right: 2px;
+  text-decoration: none;
+  color: #00aaff;
+}
+.Books .card-body .AllBooks .books-button a:hover {
+  text-decoration: underline;
+  color: blue;
 }
 .Books .Books-Categories {
   margin: 5px;
@@ -528,15 +535,5 @@
   }
   .Books .card-body .AllBooks .books-button p {
     font-size: smaller;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .Books .card-body .AllBooks .books-button a {
-    display: contents;
-    color: blue;
-  }
-  .Books .card-body .AllBooks .books-button button {
-    display: none;
   }
 }
