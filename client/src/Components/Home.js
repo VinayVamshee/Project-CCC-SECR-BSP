@@ -8,15 +8,15 @@ export default function Home() {
         <div className="carousel-inner">
           <div className="carousel-item active" >
             <h5 className="text-center">BILASPUR RAILWAY STATION</h5>
-            <img src="https://i.ibb.co/Pt1h3nW/Whats-App-Image-2024-01-13-at-23-55-38.jpg" className="d-block w-100" alt="..." />
+            <img src="https://i.ibb.co/D7BJhQh/Whats-App-Image-2024-01-13-at-23-55-38.jpg" className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item" >
             <h5 className="text-center">GM OFFICE</h5>
-            <img src="https://i.ibb.co/FV0w5jG/Whats-App-Image-2024-01-13-at-23-56-29.jpg" className="d-block w-100" alt="..." />
+            <img src="https://i.ibb.co/88zmRrN/Whats-App-Image-2024-01-13-at-23-56-29.jpg" className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item" >
             <h5 className="text-center">BILASPUR LOBBY</h5>
-            <img src="https://i.ibb.co/1Zs4s27/Whats-App-Image-2024-01-13-at-23-56-08.jpg" className="d-block w-100" alt="..." />
+            <img src="https://i.ibb.co/xGJxNXL/Whats-App-Image-2024-01-13-at-23-56-08.jpg" className="d-block w-100" alt="..." />
           </div>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
