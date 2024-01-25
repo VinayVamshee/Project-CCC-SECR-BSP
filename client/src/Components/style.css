@@ -95,7 +95,7 @@
 }
 .Home .carousel img {
   object-fit: cover;
-  height: 750px;
+  height: 80vh;
 }
 .Home .carousel h5 {
   border-bottom: 1px solid black;
@@ -132,7 +132,7 @@
   width: 600px;
 }
 .Contact .Search-results {
-  max-height: 750px;
+  max-height: 80vh;
   overflow: auto;
 }
 .Contact .Search-results .fixed-header {
@@ -329,7 +329,7 @@
 }
 .Videos .card-body {
   margin-top: 10px;
-  max-height: 750px;
+  max-height: 80vh;
   overflow: auto;
 }
 .Videos .Videos-Categories {
@@ -415,7 +415,7 @@
   overflow: auto;
 }
 .Admin .AdminProfile .Image img {
-  height: 750px;
+  height: 80vh;
 }
 .Admin .AdminProfile {
   display: flex;
