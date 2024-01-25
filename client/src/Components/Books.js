@@ -208,7 +208,6 @@ export default function Books() {
                 </div>
                 <div className="collapse" id={collapseId}>
                   <div className="card card-body">
-                    <p>{Element.Name}</p>
                     <iframe title='CollapseFrame' src={Element.Link} width="100%" height="600px" />
                   </div>
                 </div>
