@@ -90,7 +90,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   animation: FadeIn 1s ease-in;
-  max-height: 800px;
+  max-height: 900px;
   overflow: auto;
 }
 .Home .carousel img {
@@ -114,7 +114,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   animation: FadeIn 1s ease-in;
-  max-height: 800px;
+  max-height: 900px;
   overflow: auto;
 }
 .Search {
@@ -222,7 +222,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   animation: FadeIn 1s ease-in;
-  max-height: 800px;
+  max-height: 900px;
   overflow: auto;
 }
 .Gallery .Gallery-card {
@@ -249,7 +249,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   animation: FadeIn 1s ease-in;
-  max-height: 800px;
+  max-height: 900px;
   overflow: auto;
 }
 .Books .card-body {
@@ -275,6 +275,9 @@
 .Books .card-body .AllBooks .books-button button {
   text-align: left;
   margin-right: 2px;
+}
+.Books .card-body .AllBooks .books-button a {
+  display: none;
 }
 .Books .Books-Categories {
   margin: 5px;
@@ -321,7 +324,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   animation: FadeIn 1s ease-in;
-  max-height: 800px;
+  max-height: 900px;
   overflow: auto;
 }
 .Videos .card-body {
@@ -372,7 +375,7 @@
   background-repeat: no-repeat;
   border: 0.5px solid black;
   border-radius: 10px;
-  max-height: 800px;
+  max-height: 900px;
   overflow: auto;
 }
 .Notice .Heading {
@@ -408,7 +411,7 @@
   background-color: var(--BG-color);
   border: 0.5px solid black;
   border-radius: 10px;
-  max-height: 800px;
+  max-height: 900px;
   overflow: auto;
 }
 .Admin .AdminProfile .Image img {
@@ -487,7 +490,7 @@
 }
 @media screen and (max-width: 600px) {
   *{
-    font-size: large;
+    font-size:medium;
   }
   .NavigationMenu {
     height: fit-content;
@@ -524,6 +527,16 @@
 
   }
   .Books .card-body .AllBooks .books-button p {
-    font-size: small;
+    font-size: smaller;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .Books .card-body .AllBooks .books-button a {
+    display: contents;
+    color: blue;
+  }
+  .Books .card-body .AllBooks .books-button button {
+    display: none;
   }
 }
