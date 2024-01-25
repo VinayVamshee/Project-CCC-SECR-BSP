@@ -11,6 +11,7 @@ import Videos from "./Components/Videos";
 import { jwtDecode } from 'jwt-decode';
 import Admin from "./Components/Admin";
 
+import { Analytics } from '@vercel/analytics/react';
 
 const ThemeStored = () => {
   const storedTheme = localStorage.getItem('Theme');
@@ -51,6 +52,7 @@ function App() {
           <Route path='/Videos' element={<Videos/>}/>
           <Route path='/Admin' element={<Admin/>}/>
         </Routes>
+  <Analytics />
       </Router>
     </div>
   );
