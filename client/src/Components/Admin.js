@@ -317,7 +317,7 @@ export default function Admin() {
           <div className="modal-content LoginForm">
             <form onSubmit={CheckStaff}>
               <div className="modal-header">
-                <h1 className="modal-title fs-5" id="StaffLoginModalLabel">Modal title</h1>
+                <h1 className="modal-title fs-5" id="StaffLoginModalLabel">Staff Login</h1>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div className="modal-body">
@@ -339,7 +339,7 @@ export default function Admin() {
           <div className="modal-content LoginForm">
             <form onSubmit={AddStaffUser}>
               <div className="modal-header">
-                <h1 className="modal-title fs-5" id="AddStaffUserModalLabel">Modal title</h1>
+                <h1 className="modal-title fs-5" id="AddStaffUserModalLabel">Add New Staff</h1>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div className="modal-body">
