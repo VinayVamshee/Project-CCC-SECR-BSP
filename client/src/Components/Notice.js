@@ -186,7 +186,7 @@ export default function Notice() {
                   <div className="modal-content">
                     <form onSubmit={AddNewNotice}>
                       <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="AddNoticeModalLabel">Modal title</h1>
+                        <h1 className="modal-title fs-5" id="AddNoticeModalLabel">Add New Notice</h1>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div className="modal-body">
@@ -220,7 +220,7 @@ export default function Notice() {
                   <div className="modal-content">
                     <form onSubmit={AddNewNoticeCategory}>
                       <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="AddNoticeCategoryModalLabel">Modal title</h1>
+                        <h1 className="modal-title fs-5" id="AddNoticeCategoryModalLabel">Add New Category</h1>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div className="modal-body">
