@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-// import PNR from './PNGs/PNR.png'
 
 export default function Admin() {
 
@@ -13,6 +12,20 @@ export default function Admin() {
     }
     else {
       setIsLoggedIn(false)
+    }
+  }, [])
+
+
+  // eslint-disable-next-line
+  const [IsStaffLoggedIn, setIsStaffLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('Stafftoken');
+    if (token) {
+      setIsStaffLoggedIn(true)
+    }
+    else {
+      setIsStaffLoggedIn(false)
     }
   }, [])
 
@@ -103,9 +116,72 @@ export default function Admin() {
     }
   }
 
+  const StaffLogout = () => {
+    const AskUser = window.confirm("Are you sure?")
+    if (AskUser) {
+      localStorage.removeItem('Stafftoken');
+      window.location.reload();
+    }
+  }
+
+  const [Staffusername, setStaffUsername] = useState("");
+  const [Staffpassword, setStaffPassword] = useState("");
+
+  const AddStaffUser = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('https://ccc-bsp-server.vercel.app/StaffRegister', { Staffusername, Staffpassword })
+        .then(result => {
+          alert('Staff Registration Successful')
+          console.log(result)
+        })
+        .catch(error => console.log(error))
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const CheckStaff = async (e) => {
+    e.preventDefault();
+    axios.post('https://ccc-bsp-server.vercel.app/StaffLogin', { Staffusername, Staffpassword })
+      .then(result => {
+        if (result.data.token) {
+          localStorage.setItem('Stafftoken', result.data.token)
+          alert('Login Successful')
+          window.location.reload();
+        }
+        else if (result.data === 'Please Check the Password') {
+          alert('Incorrect Password')
+        }
+        else {
+          alert('Error')
+        }
+      })
+      .catch(error => console.log(error))
+  }
+
   return (
     <div className='Admin'>
       <div className='AddNew'>
+
+        {
+          IsStaffLoggedIn ?
+            <button className='btn btn-danger' onClick={StaffLogout}>Staff Logout</button>
+            :
+            <button type="button" className="btn btn-info" data-bs-toggle="modal" data-bs-target="#StaffLoginModal">
+              Staff Login
+            </button>
+        }
+
+
+        {
+          IsLoggedIn ?
+            <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#AddStaffUserModal">
+              Add Staff User
+            </button>
+            :
+            null
+        }
         {
           IsLoggedIn ?
             <button type="button" className="btn btn-Link btn-outline-success" data-bs-toggle="modal" data-bs-target="#RegisterModal">
@@ -164,7 +240,7 @@ export default function Admin() {
       <div className='Feedbacks'>
         {
           IsLoggedIn ?
-            <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+            <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFeedback" aria-expanded="false" aria-controls="collapseFeedback">
               Feedbacks
             </button>
             :
@@ -172,7 +248,7 @@ export default function Admin() {
         }
 
         <div>
-          <div className="collapse" id="collapseWidthExample">
+          <div className="collapse" id="collapseFeedback">
             {
               AllFeedback && AllFeedback.slice().reverse().map((Element, idx) => {
                 return (
@@ -186,7 +262,6 @@ export default function Admin() {
                 )
               })
             }
-
           </div>
         </div>
       </div>
@@ -194,8 +269,7 @@ export default function Admin() {
 
 
 
-
-
+      {/* CheckAdmin */}
       <div className="modal fade" id="LoginModal" tabIndex="-1" aria-labelledby="LoginModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
@@ -205,12 +279,8 @@ export default function Admin() {
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div className="modal-body">
-
-
                 <input placeholder='Username' value={username} onChange={(event) => setUsername(event.target.value)} type='text' />
-
                 <input placeholder='Password' value={password} onChange={(event) => setPassword(event.target.value)} type='password' />
-
               </div>
               <div className="modal-footer">
                 <button type="submit" className="btn btn-primary">Login</button>
@@ -220,6 +290,7 @@ export default function Admin() {
         </div>
       </div>
 
+      {/* AddNewAdmin */}
       <div className="modal fade" id="RegisterModal" tabIndex="-1" aria-labelledby="RegisterModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
@@ -230,11 +301,54 @@ export default function Admin() {
               </div>
               <div className="modal-body">
                 <input value={username} onChange={(event) => setUsername(event.target.value)} placeholder='Username' type='text' />
-
                 <input value={password} onChange={(event) => setPassword(event.target.value)} placeholder='Password' type='password' />
               </div>
               <div className="modal-footer">
                 <button type="submit" className="btn btn-primary">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* CheckStaff */}
+      <div className="modal fade" id="StaffLoginModal" tabIndex="-1" aria-labelledby="StaffLoginModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content LoginForm">
+            <form onSubmit={CheckStaff}>
+              <div className="modal-header">
+                <h1 className="modal-title fs-5" id="StaffLoginModalLabel">Modal title</h1>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div className="modal-body">
+                <input value={Staffusername} onChange={(event) => setStaffUsername(event.target.value)} placeholder='Username' type='text' />
+                <input value={Staffpassword} onChange={(event) => setStaffPassword(event.target.value)} placeholder='Password' type='password' />
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" className="btn btn-primary">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* AddStaff */}
+      <div className="modal fade" id="AddStaffUserModal" tabIndex="-1" aria-labelledby="AddStaffUserModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content LoginForm">
+            <form onSubmit={AddStaffUser}>
+              <div className="modal-header">
+                <h1 className="modal-title fs-5" id="AddStaffUserModalLabel">Modal title</h1>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div className="modal-body">
+                <input value={Staffusername} onChange={(event) => setStaffUsername(event.target.value)} placeholder='Username' type='text' />
+                <input value={Staffpassword} onChange={(event) => setStaffPassword(event.target.value)} placeholder='Password' type='password' />
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" className="btn btn-primary" data-bs-dismiss="modal">Add New Staff</button>
               </div>
             </form>
           </div>
