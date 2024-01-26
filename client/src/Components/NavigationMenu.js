@@ -136,7 +136,7 @@ export default function NavigationMenu() {
                         </ul>
 
                         <button className='btn btn-Link-Toggle' onClick={ChangeTheme}><img src={ThemeIcon} alt='...' />Theme</button>
-                        <Link to='/Admin' className='btn btn-Link-Toggle'><img src='https://cdn-icons-png.flaticon.com/512/560/560199.png' alt='...' />Admin</Link>
+                        <Link to='/Admin' className='btn btn-Link-Toggle'><img src='https://cdn-icons-png.flaticon.com/512/560/560199.png' alt='...' />Login</Link>
                     </div>
                 </div>
             </div>
@@ -184,7 +184,7 @@ export default function NavigationMenu() {
             </div>
 
             <button className='btn btn-Link' onClick={ChangeTheme}><img src={ThemeIcon} alt='...' />Theme</button>
-            <Link to='/Admin' className='btn btn-Link btn-outline-danger'><img src='https://cdn-icons-png.flaticon.com/512/560/560199.png' alt='...' />Admin</Link>
+            <Link to='/Admin' className='btn btn-Link btn-warning'><img src='https://cdn-icons-png.flaticon.com/512/560/560199.png' alt='...' />Login</Link>
             
 
             <div className="modal fade" id="AddNewOtherModal" tabIndex="-1" aria-labelledby="AddNewOtherModalLabel" aria-hidden="true">
