@@ -452,6 +452,19 @@
   justify-content: space-between;
   width: 100%;
 }
+.Admin .DevelopedBy {
+  text-align: end;
+  color: var(--text-color);
+  animation: PopRight 2s forwards;
+}
+.Admin .DevelopedBy a {
+  text-decoration: none;
+  color: #00aaff;
+}
+.Admin .DevelopedBy a:hover {
+  text-decoration: underline;
+  color: purple;
+}
 .Admin .AddNew .modal-body textarea {
   height: auto;
   max-height: 200px;
