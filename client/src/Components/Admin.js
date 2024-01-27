@@ -166,7 +166,7 @@ export default function Admin() {
 
         {
           IsStaffLoggedIn ?
-            <button className='btn btn-danger' onClick={StaffLogout}>Staff Logout</button>
+            <button className='btn btn-outline-info' onClick={StaffLogout}>Staff Logout</button>
             :
             <button type="button" className="btn btn-info" data-bs-toggle="modal" data-bs-target="#StaffLoginModal">
               Staff Login
@@ -192,7 +192,7 @@ export default function Admin() {
         }
         {
           IsLoggedIn ?
-            <button className='btn btn-Link btn-danger' onClick={Logout}>LogOut</button>
+            <button className='btn btn-Link btn-outline-danger' onClick={Logout}>LogOut</button>
             :
             <button className='btn btn-Link btn-danger' data-bs-toggle="modal" data-bs-target="#LoginModal">Admin Login</button>
         }
