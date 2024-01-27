@@ -542,6 +542,11 @@
   .NavigationMenu .NavigationToggle img {
     height: 30px;
     margin-right: 10px;
+    transition: .3s ease-in-out;
+  }
+  .NavigationMenu .NavigationToggle .rotate img {
+    transform: rotate(90deg);
+    transition: .3s ease-in-out;
   }
   .NavigationMenu .btn-Link {
     display: none;
