@@ -237,6 +237,10 @@ export default function Admin() {
 
       </div>
 
+         <div className='DevelopedBy'>
+        <p>Developed By <a href='https://vinay-vamshee-resume.vercel.app/' target='_blank' rel="noreferrer">Pechetti Vinay Vamshee</a></p>
+      </div>
+
       <div className='Feedbacks'>
         {
           IsLoggedIn ?
