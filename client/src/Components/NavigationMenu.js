@@ -89,12 +89,18 @@ export default function NavigationMenu() {
             .catch(error => console.log(error))
     }
 
+    const [IsToggleCollapseOpen, setIsToggleCollapseOpen] = useState(false);
+
+    const NavigationToggleCollapse = () => {
+        setIsToggleCollapseOpen(!IsToggleCollapseOpen);
+    }
+
 
     return (
         <div className='NavigationMenu'>
 
             <div className='NavigationToggle'>
-                <button className="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavigationToggle" aria-expanded="false" aria-controls="collapseNavigationToggle">
+                <button className={`btn ${IsToggleCollapseOpen ? 'rotate' : ''}`} onClick={NavigationToggleCollapse} type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavigationToggle" aria-expanded="false" aria-controls="collapseNavigationToggle">
                     <img src='https://i.pinimg.com/originals/26/9d/d1/269dd16fa1f5ff51accd09e7e1602267.png' alt='...' />
                 </button>
                 <div className="collapse" id="collapseNavigationToggle">
