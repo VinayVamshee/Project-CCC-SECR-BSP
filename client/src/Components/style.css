@@ -2,7 +2,7 @@
   scroll-behavior: smooth;
 }
 .App {
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--App-BG-color);
 }
 .light-theme {
@@ -521,6 +521,9 @@
 @media screen and (max-width: 600px) {
   *{
     font-size:medium;
+  }
+  .App {
+    padding-bottom: 2px;
   }
   .NavigationMenu {
     height: fit-content;
