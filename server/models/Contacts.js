@@ -28,16 +28,16 @@ CADRE: {
   type: String
 },
 'AVAIL DATE': {
-  type: Date
+  type: String
 },
 'EMP CODE': {
   type: String
 },
 'APP.DATE': {
-  type: Date
+  type: String
 },
 DOB: {
-  type: Date
+  type: String
 }
 });
 
