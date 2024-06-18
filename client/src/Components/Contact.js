@@ -152,7 +152,7 @@ export default function Contact() {
                                         <th scope="col"> <label>CREW NAME</label></th>
                                         <th scope="col"><label>MOBILE NO</label></th>
                                         <th scope="col"><label>CREW TYPE</label></th>
-                                        <th scope="col"><label>DETAILS</label></th>
+                                        // <th scope="col"><label>DETAILS</label></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -180,10 +180,10 @@ export default function Contact() {
                                                         </div>
                                                     </td>
                                                     <td>{Element["CREW TYPE"]}</td>
-                                                    <td>
-                                                        <button type="button" onClick={() => OpenContact(Element)} className="btn btn-info" data-bs-toggle="modal" data-bs-target="#SelectedContactModal">Profile
-                                                        </button>
-                                                    </td>
+                                                    // <td>
+                                                    //     <button type="button" onClick={() => OpenContact(Element)} className="btn btn-info" data-bs-toggle="modal" data-bs-target="#SelectedContactModal">Profile
+                                                    //     </button>
+                                                    // </td>
                                                 </tr>
                                             )
                                         })
