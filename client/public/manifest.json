@@ -1,6 +1,6 @@
 {
-  "short_name": "CCC",
-  "name": "CCC SECR BSP",
+  "short_name": "PNR/CLI/BSP/SECR",
+  "name": "PNR/CLI/BSP/SECR",
   "icons": [
     {
       "src": "favicon.ico",
