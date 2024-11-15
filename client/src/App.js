@@ -22,14 +22,6 @@ const ThemeStored = () => {
 
 function App() {
 
-  const location = useLocation();
-
-    useEffect(() => {
-        window.gtag('config', 'G-8Z306QPFYW', {
-            page_path: location.pathname,
-        });
-    }, [location]);
-
   const checkTokenExpiration = () => {
     const token = localStorage.getItem('token');
     if (token) {
