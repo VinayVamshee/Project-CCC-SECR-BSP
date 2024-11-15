@@ -445,12 +445,23 @@
   overflow: auto;
 }
 .Admin .AdminProfile .Image img {
-  height: 78vh;
+  height: 60vh;
+  border-radius: 20px;
+  filter: drop-shadow(7px 7px 7px rgba(70, 70, 70, 0.503));
+  border: none;
 }
 .Admin .AdminProfile {
+  font-family: 'Times New Roman', Times, serif;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
+}
+.Admin h1 {
+  font-weight: bolder;
+}
+.Admin h1, h3, h2{
+  font-style: italic;
 }
 .Admin .DevelopedBy {
   text-align: end;
@@ -475,6 +486,23 @@
   border-radius: 5px;
   width: 100%;
   padding: 5px;
+}
+.Feedbacks {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: fit-content;
+}
+.Feedbacks p {
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(255, 0, 0);
+  font-size: larger;
+  background-color:#56565630;
+  padding: 5px;
+  border-radius: 10px;
+}
+.Feedbacks button {
+  width: fit-content;
 }
 .Admin .Feedbacks .card-header {
   background-color: var(--Navigation-BG-color);
