@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import Home from './Components/Home';
 import NavigationMenu from './Components/NavigationMenu';
 import './Components/style.css';
@@ -20,6 +21,14 @@ const ThemeStored = () => {
 
 
 function App() {
+
+  const location = useLocation();
+
+    useEffect(() => {
+        window.gtag('config', 'G-8Z306QPFYW', {
+            page_path: location.pathname,
+        });
+    }, [location]);
 
   const checkTokenExpiration = () => {
     const token = localStorage.getItem('token');
