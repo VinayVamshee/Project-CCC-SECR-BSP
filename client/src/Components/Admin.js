@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import pnr from './PNGs/PNR1.jpeg'
 
 export default function Admin() {
 
@@ -166,7 +167,7 @@ export default function Admin() {
 
         {
           IsStaffLoggedIn ?
-            <button className='btn btn-outline-info' onClick={StaffLogout}>Staff Logout</button>
+            <button className='btn btn-danger' onClick={StaffLogout}>Staff Logout</button>
             :
             <button type="button" className="btn btn-info" data-bs-toggle="modal" data-bs-target="#StaffLoginModal">
               Staff Login
@@ -192,17 +193,22 @@ export default function Admin() {
         }
         {
           IsLoggedIn ?
-            <button className='btn btn-Link btn-outline-danger' onClick={Logout}>LogOut</button>
+            <button className='btn btn-Link btn-danger' onClick={Logout}>LogOut</button>
             :
             <button className='btn btn-Link btn-danger' data-bs-toggle="modal" data-bs-target="#LoginModal">Admin Login</button>
         }
       </div>
       <div className='AdminProfile'>
         <div className='AdminDetails'>
-          <h1>PNR</h1>
+          <h1>P.NAGESWAR RAO</h1>
+          <h3>Chief Loco Inspector</h3>
+          <h3>Bilaspur/SECR</h3>
+          <h2>
+            Phone no: <a href="tel:9752441439">9752441439</a>
+          </h2>
         </div>
         <div className='Image'>
-          <img className='PopRight' src='...' alt='...' />
+          <img className='PopRight' src={pnr} alt='...' />
         </div>
       </div>
 
@@ -236,12 +242,15 @@ export default function Admin() {
         </div>
 
       </div>
-
-         <div className='DevelopedBy'>
+      <div className='DevelopedBy'>
         <p>Developed By <a href='https://vinay-vamshee-resume.vercel.app/' target='_blank' rel="noreferrer">Pechetti Vinay Vamshee</a></p>
       </div>
 
       <div className='Feedbacks'>
+        <p>The content provided on this website is for educational and informational purposes only. It is not intended to be used as evidence or reference in any legal proceedings, police cases, or official matters. Users are advised to consult qualified professionals or trusted sources for any formal or legal requirements.
+          <br />
+          In case of any problems, issues, or disputes, please contact the admin for assistance
+        </p>
         {
           IsLoggedIn ?
             <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFeedback" aria-expanded="false" aria-controls="collapseFeedback">
