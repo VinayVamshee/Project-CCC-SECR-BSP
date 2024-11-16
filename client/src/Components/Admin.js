@@ -39,7 +39,7 @@ export default function Admin() {
   const AddNewFeedback = async (e) => {
     e.preventDefault();
     try {
-      const updatedFeedback = { ...Feedback, TimeAdded: new Date().toLocaleString() };
+      const updatedFeedback = { ...Feedback, TimeAdded: new Date() };
       await axios.post("https://ccc-bsp-server.vercel.app/AddNewFeedback", { ...updatedFeedback })
         .then(result => {
           console.log(result)
@@ -264,13 +264,14 @@ export default function Admin() {
           <div className="collapse" id="collapseFeedback">
             {
               AllFeedback && AllFeedback.slice().reverse().map((Element, idx) => {
+               const formattedDate = new Date(Element.TimeAdded).toLocaleDateString('en-GB');
                 return (
                   <div key={idx} className="card card-header">
                     {Element.Name}
                     <div className=' card card-body'>
                       {Element.FeedbackData}
                     </div>
-                    <p className='text-end mt-2'> {Element.TimeAdded}</p>
+                    <p className='text-end mt-2'> {formattedDate}</p>
                   </div>
                 )
               })
