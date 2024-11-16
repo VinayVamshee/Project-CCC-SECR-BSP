@@ -213,7 +213,21 @@ export default function Books() {
                     {Element.ClusterName}
                   </button> */}
 
-                        <p>{new Date(Element.TimeAdded).toLocaleString()}</p>
+                       <p>
+  {
+    (() => {
+      const date = new Date(Element.TimeAdded);
+      const isValidDate = !isNaN(date.getTime()); 
+      const formattedDate = isValidDate 
+        ? date.toLocaleDateString('en-GB') 
+        : Element.TimeAdded;
+      const formattedTime = isValidDate 
+        ? date.toLocaleTimeString('en-US', { hour12: true })
+        : '';
+      return isValidDate ? `${formattedDate}, ${formattedTime}` : Element.TimeAdded;
+    })()
+  }
+</p>
                         {
                           IsLoggedIn ?
                             <button className='btn btn-danger' onClick={(e) => DeleteBook(Element._id)}>Delete</button>
