@@ -41,7 +41,7 @@ export default function Videos() {
   const AddNewVideo = async (e) => {
     e.preventDefault();
     try {
-      const updatedVideos = { ...Videos, TimeAdded: new Date().toLocaleString() };
+      const updatedVideos = { ...Videos, TimeAdded: new Date() };
       setVideos(updatedVideos);
       await axios.post("https://ccc-bsp-server.vercel.app/AddNewVideo", { ...updatedVideos })
         .then(result => {
@@ -180,6 +180,14 @@ export default function Videos() {
                 {
                   AllVideos && AllVideos.filter((video) => video.Name.toLowerCase().includes(SearchQuery.toLowerCase())).slice().reverse().map((Element, idx) => {
                     const animationDelay = `${idx * 0.1}s`;
+                  const date = new Date(Element.TimeAdded);
+      const isValidDate = !isNaN(date.getTime()); 
+      const formattedDate = isValidDate 
+        ? date.toLocaleDateString('en-GB')
+        : Element.TimeAdded; 
+      const formattedTime = isValidDate 
+        ? date.toLocaleTimeString('en-US', { hour12: true }) 
+        : '';
                     return (
                       <div className="col" key={idx}>
                         <div className="card PopRight shadow-sm" style={{ animationDelay }}>
@@ -197,7 +205,7 @@ export default function Videos() {
                                 }
 
                               </div>
-                              <small className="text-body-secondary">{Element.TimeAdded}</small>
+                              <small className="text-body-secondary">{formattedDate}, {formattedTime}</small>
                             </div>
                           </div>
                         </div>
