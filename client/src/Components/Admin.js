@@ -264,14 +264,20 @@ export default function Admin() {
           <div className="collapse" id="collapseFeedback">
             {
               AllFeedback && AllFeedback.slice().reverse().map((Element, idx) => {
-               const formattedDate = new Date(Element.TimeAdded).toLocaleDateString('en-GB');
+                const date = new Date(Element.TimeAdded);
+      
+      const isValidDate = !isNaN(date.getTime());
+      
+      const formattedDate = isValidDate ? date.toLocaleDateString('en-GB') : Element.TimeAdded;
+      const formattedTime = isValidDate ? date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }) : '';
+
                 return (
                   <div key={idx} className="card card-header">
                     {Element.Name}
                     <div className=' card card-body'>
                       {Element.FeedbackData}
                     </div>
-                    <p className='text-end mt-2'> {formattedDate}</p>
+                    <p className='text-end mt-2'>  {formattedDate} {formattedTime} </p>
                   </div>
                 )
               })
